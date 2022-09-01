@@ -6,8 +6,9 @@ from bson import ObjectId
 
 user = APIRouter()
 
+#response_model=list[User]
 
-@user.get('/users', response_model=list[User])
+@user.get('/users')
 async def get_all_users():
     return usersEntity(conn.local.user.find())
 
